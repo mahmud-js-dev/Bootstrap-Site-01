@@ -51,6 +51,21 @@
   font-family: var(--font-family-sans-serif);
 }
 
+.icon {
+  display: inline-block;
+  font-size: inherit;
+  overflow: visible;
+  vertical-align: -0.125;
+  text-rendering: auto;
+  fill: gray !important;
+  width: 50px;
+  height: 50px;
+}
+
+.animated {
+  visibility: visible !important;
+}
+
 body {
   font-family: var(--font-family-text);
   color: var(--color-text);
@@ -62,6 +77,26 @@ body {
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.site-header .animated {
+  animation-delay: 2s;
+  animation-duration: 1s;
+}
+
+.layout-text {
+  font-size: 1.1em;
+}
+
+.site-nav.inbody {
+  background: var(--secondary);
+}
+
+@media screen and (max-width: 768px) {
+  .site-header .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+  }
 }
 
 .site-header .layout-hero {
@@ -78,8 +113,42 @@ body {
   font-size: 1.2em;
 }
 
+.site-header .nav-link {
+  position: relative;
+  padding-bottom: 0;
+  margin-bottom: 2px;
+}
+
+.site-header .nav-link:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  max-width: 100px;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: var(--yellow);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-out;
+}
+
+.site-header .nav-link:hover:before {
+  visibility: visible;
+  left: 0;
+  transform: scaleX(1);
+}
+
 #page-multicolumn {
   background: var(--light-blue);
+}
+
+.layout-multicolumn .layout-image {
+  transition: all 0.3s ease-out;
+}
+
+.layout-multicolumn .layout-image:hover {
+  transform: scale(1.1) translateY(-3px);
 }
 
 .page-section-header .page-section-title {
@@ -111,6 +180,34 @@ body {
 
 #page-carousel {
   background: var(--light-purple);
+}
+
+.layout-nested .layout-title {
+  color: var(--purple);
+  font-family: var(--font-family-sans-serif);
+  font-size: 2.2em;
+}
+
+#page-floater {
+  background: var(--light-blue);
+}
+
+@media screen and (min-width: 768px) {
+  #page-floater {
+    margin: 150px 0 150px 0;
+  }
+
+  .layout-floater .layout-container {
+    position: relative;
+  }
+
+  .layout-floater .layout-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(15deg)
+      scale(1.1);
+  }
 }
 
 .layout-social .layout-icon {
