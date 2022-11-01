@@ -37,8 +37,11 @@
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
   --gray-dark: #404040;
+  --purple: #533777;
 
   /* Page Variables */
+  --light-blue: #e1f7f5;
+  --light-purple: #c290d2;
   --font-family-serif: Merriweather, serif;
   --color-text: var(--gray-dark);
   --font-family-text: var(--font-family-serif);
@@ -73,6 +76,41 @@ body {
 
 .site-header .page-section-text {
   font-size: 1.2em;
+}
+
+#page-multicolumn {
+  background: var(--light-blue);
+}
+
+.page-section-header .page-section-title {
+  font-size: 4em;
+  font-family: var(--font-family-sans-serif);
+  font-weight: 200;
+  color: var(--purple);
+}
+
+.page-section-header .page-section-text {
+  font-size: 1.2em;
+  font-weight: 200;
+}
+
+.layout-media .layout-image {
+  max-width: 200px;
+}
+
+.layout-media .layout-title {
+  color: var(--purple);
+  font-family: var(--font-family-sans-serif);
+  font-weight: 200;
+  font-size: 1.6em;
+}
+
+.layout-photogrid .layout-image {
+  background: var(--light-blue);
+}
+
+#page-carousel {
+  background: var(--light-purple);
 }
 
 .layout-social .layout-icon {
